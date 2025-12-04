@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  },
+  "name": "advent2025",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "undici-types": "^7.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azurenity/advent2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azurenity/advent2025/issues"
+  },
+  "homepage": "https://github.com/azurenity/advent2025#readme"
+}
