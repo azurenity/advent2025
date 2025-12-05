@@ -12,11 +12,10 @@ function decypher() {
         const [ lower, higher ] = numList
         for (let i = Number(lower); i <= Number(higher); i++) {
             const stringElement: string = i.toString()
-            if (stringElement.length % 2 === 0) {
-                if (stringElement.slice(0,stringElement.length / 2) === stringElement.slice(stringElement.length / 2)) {
-                    password += i
-                }
-            } 
+            // you want to check if theres a substring that can be repeated to copy the string
+            if (isInvalid(stringElement)) {
+                password += i
+            }
         }
     })
 
@@ -24,3 +23,21 @@ function decypher() {
 }
 
 console.log(decypher())
+
+function isInvalid(stringElement: string) {
+
+    let j = 1;
+    let substring: string = stringElement.slice(0, j);
+    while (substring.length < (Math.floor(stringElement.length / 2) + 1)) {
+        if (stringElement.length % substring.length === 0) {
+            let stringFormed: string = substring.repeat(stringElement.length / substring.length);
+            if (stringFormed === stringElement) {
+                return true
+                break;
+            }
+        }
+        j++;
+        substring = stringElement.slice(0, j);
+    }
+    return false;
+}
