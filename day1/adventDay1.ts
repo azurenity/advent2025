@@ -13,6 +13,7 @@ function decypher() {
         let magnitude = parseInt(instructions.slice(1), 10) % 100
         let numberPassed = Math.floor(parseInt(instructions.slice(1), 10) / 100)
 
+        times += numberPassed // default times it will cross 0 anyways
         if (direction === 'L') {
             dial -= magnitude
         } else if (direction === "R") {
@@ -30,13 +31,11 @@ function decypher() {
             } else if (dial < 0) {
                 dial += 100
                 times += 1
+            } else if (dial === 0) {
+                times += 1 // this double counts if my dial go 70 to 100
             }
         }
-        
-        if (dial === 0) {
-            times += 1
-        }         
-        times += numberPassed
+
         prevDial = dial
     })
 
